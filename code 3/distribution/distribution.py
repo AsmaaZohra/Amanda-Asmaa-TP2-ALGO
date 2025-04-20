@@ -1,5 +1,4 @@
-
-# Nom(s) étudiant(s) / Name(s) of student(s):
+# Nom(s) étudiant(s) / Name(s) of student(s): Amanda Dorval et Asmaa Skou
 
 import sys
 
@@ -7,11 +6,40 @@ import sys
 
 # Espace pour fonctions auxillaires :
 # Space for auxilary functions :
+def rech_en_profondeur(node, result):
+    if not node:
+        return 0,0  # si nombre de jetons et de noeud est de 0
+    
+    # analyse des sous-arbres gauches et droites
+    jetons_gauches, noeuds_gauches = rech_en_profondeur(node.left, result)
+    jetons_droits, noeuds_droits = rech_en_profondeur(node.right, result)
+
+    # nombre total de noeuds dans sous-arbre (noeud courant)
+    total_noeuds = noeuds_gauches + noeuds_droits + 1
+
+    # nombre total de jetons dans le sous-arbre (noeud courant)
+    total_jetons = jetons_gauches + jetons_droits + node.val
+
+    # calcul du flux de jetons (différence entre jetons actuels et jetons nécéssaires)
+    flow = total_jetons - total_noeuds
+
+    # résultat en valeur absolu
+    result[0] += abs(flow)
+
+    # retourne le nombre de jetons et de noeuds dans le sous-arbre
+    return total_jetons, total_noeuds
+
+
 
 
 # Fonction à compléter / function to complete:
 def solve(root) :
-    return 
+    if not root:
+        return 0
+    
+    result = [0] 
+    rech_en_profondeur(root, result)
+    return result[0]
     
 
 # Ne pas modifier le code ci-dessous :
@@ -91,3 +119,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+# POUR TESTER CODE DANS TERMINAL
+#  python3 distribution.py tree1.txt
+# python3 distribution.py tree2.txt
+# python3 distribution.py tree3.txt
+
