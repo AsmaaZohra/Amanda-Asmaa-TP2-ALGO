@@ -161,7 +161,6 @@ def smooth_height_map(height_map, passes=1):
         new_map = smoothed.copy()
         for i in range(1, height_map.shape[0] - 1):
             for j in range(1, height_map.shape[1] - 1):
-                # 3x3 average
                 region = smoothed[i-1:i+2, j-1:j+2]
                 new_map[i, j] = np.mean(region)
         smoothed = new_map
@@ -172,7 +171,7 @@ def smooth_height_map(height_map, passes=1):
 # -----------------------------
 def generate_model():
     height_map = generate_height_map(GRID_SIZE)
-    height_map = smooth_height_map(height_map, passes=3)  # adjust passes as needed
+    height_map = smooth_height_map(height_map, passes=3)  # lissage, peut le modifier si on veut 
     base = generate_ocean_plate()
     island = generate_island(height_map)
     return union()(base, island)
