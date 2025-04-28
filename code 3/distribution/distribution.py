@@ -122,8 +122,5 @@ if __name__ == "__main__":
 
 
 
-# POUR TESTER CODE DANS TERMINAL
-#  python3 distribution.py tree1.txt
-# python3 distribution.py tree2.txt
-# python3 distribution.py tree3.txt
+
 
