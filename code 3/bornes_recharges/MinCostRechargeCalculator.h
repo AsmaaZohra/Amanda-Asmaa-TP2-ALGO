@@ -47,9 +47,7 @@ int MinCostRechargeCalculator::CalculateMinCostRecharge(const vector<int>& Recha
 }
 
 
-// À ENLEVER!!!
-// SI TU VEUX LE TESTER SUR MACBOOK VSCODE ÉCRIT CA DANS TON TERMINAL A LA PLACE: g++ -std=c++11 -o min_cost_recharge min_cost_recharge.cpp MinCostRechargeCalculator.cpp
-// ./min_cost_recharge
+
 
 
 
