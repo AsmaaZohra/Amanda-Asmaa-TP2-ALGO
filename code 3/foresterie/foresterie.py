@@ -3,9 +3,10 @@
 import sys
 
 
-# Fonction à compléter / function to complete:
+#function to complete:
 
 # The problem is similar to the house robber problem 
+#https://leetcode.com/problems/house-robber/solutions/156523/from-good-to-great-how-to-approach-most-of-dp-problems/ 
 # Considering the test file, we only need to give the profits as the answer and not the trees used to get that output 
 def solve(cost, forest) :
     profits = []
