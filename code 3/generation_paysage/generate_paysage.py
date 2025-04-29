@@ -205,10 +205,10 @@ def generate_ocean_plate():
             ocean_faces.append(tile)
 
     # Text label below the model
-    label_text = linear_extrude(height=0.8)(
+    label_text = linear_extrude(height=0.2)(
         text("AZS-AD IFT2125", size=5, halign="left", valign="baseline")
     )
-    label = translate([10, MODEL_DEPTH - 5, -0.8])(rotate([180, 0, 0])(label_text))
+    label = translate([7, MODEL_DEPTH - 5, 0.6])(rotate([180, 0, 0])(label_text))
 
     return union()(ocean_faces, label)
 
